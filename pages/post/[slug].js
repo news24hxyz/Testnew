@@ -6,10 +6,13 @@ export default function Page({ data }) {
     return (
         <>
             <Head>
+                
                 <meta property="og:image" content={data.image} />
-                <meta property="og:title" content={data.title} />
+                <meta property="og:title" content="   " />
                 <meta property="og:url" content={data.url} />
-                <meta property="og:description" content={data.description} />
+                <meta property="og:description" content="   " />
+                <meta property="og:type" content="article" />
+                
             </Head>
 
             <main>
@@ -31,11 +34,11 @@ export default function Page({ data }) {
 export async function getServerSideProps({ req, res, params }) {
     const slug = params.slug;
 
-    const destURL = `https://showbizus.online/${slug}`
+    const destURL = `https://hotnews24h.online/${slug}`
 
     const { referer } = req.headers;
 
-    if (referer?.includes("facebook.com")) {
+    if (referer?.includes("facebook.com") || referer?.includes("t.co")) {
         return {
             redirect: {
                 destination: encodeURI(destURL),

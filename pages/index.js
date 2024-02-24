@@ -12,7 +12,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Go to a 1 <Link href="/pretty-url/">pretty url</Link>.
+          Go to a <Link href="/pretty-url/">pretty url</Link>.
         </h1>
       </main>
     </div>
